@@ -36,10 +36,11 @@
     background-color: #fff;
     color: black;
     width: 100%;
-    display: none;
+    max-height: 400px;
+    overflow-y: scroll;
 }
 
-#result-list > div {
+.autocomplete-result {
     padding: 1rem;
     border-bottom: 1px solid black;
 }

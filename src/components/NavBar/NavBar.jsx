@@ -1,10 +1,15 @@
 import { /*useRef*/ useState } from 'react';
 import './NavBar.css';
 
+import useMovieList from '../../hooks/useMovieList';
+import useDebounce from '../../hooks/useDebounce';
+
 function NavBar() {
 
     // const resultListRef = useRef(null);
     const [searchResult, setSearchResult] = useState(false);
+    const [searchTerm, setSearchTerm] = useState('');
+    const {movieList} = useMovieList(searchTerm);
 
     return (
         <div className="nav-bar-wrapper">
@@ -21,11 +26,19 @@ function NavBar() {
                         // resultListRef.current.style.display = "none";
                         setSearchResult(false);
                     }}
+                    // onChange={(e) => {
+                    //     setSearchTerm(e.target.value);
+                    // }}
+                    onChange={useDebounce((e) => {
+                        setSearchTerm(e.target.value);
+                    })}
                 />
                 <div id='result-list' /*ref={resultListRef}*/ style={{display: `${searchResult ? 'block' : 'none'}`}}>
-                    <div>result 1</div>
-                    <div>result 2</div>
-                    <div>result 3</div>
+                    {
+                        movieList.length > 0 && movieList.map(movie => (
+                            <div className='autocomplete-result' key={movie.imdbID}>{movie.Title}</div>
+                        ))
+                    }
                 </div>
             </div>
             <div>

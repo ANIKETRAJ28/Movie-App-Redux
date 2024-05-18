@@ -26,3 +26,20 @@
     font-size: xx-large;
     letter-spacing: 15px;
 }
+
+.search-bar {
+    position: relative;
+}
+
+#result-list {
+    position: absolute;
+    background-color: #fff;
+    color: black;
+    width: 100%;
+    display: none;
+}
+
+#result-list > div {
+    padding: 1rem;
+    border-bottom: 1px solid black;
+}

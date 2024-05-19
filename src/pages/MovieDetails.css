@@ -1,0 +1,23 @@
+.movie-details-wrapper {
+    display: flex;
+    justify-content: space-around;
+}
+
+.movie-details-extra-details {
+    flex-basis: 50%;
+    margin-top: 3rem;
+    color: white;
+}
+
+.movie-details-extra-details  > div {
+    font-size: x-large;
+    margin-bottom: 2rem;
+}
+
+.chips {
+    border: 1px solid var(--dark-blue);
+    padding: 5px 10px;
+    margin-right: 10px;
+    border-radius: 20px;
+    background-color: var(--dull-blue);
+}

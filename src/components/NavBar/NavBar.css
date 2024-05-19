@@ -37,6 +37,7 @@
 }
 
 #result-list {
+    z-index: 1;
     position: absolute;
     background-color: #fff;
     color: black;

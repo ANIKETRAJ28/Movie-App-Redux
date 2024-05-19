@@ -19,7 +19,7 @@
     border: none;
     border-radius: 5px;
     height: 25px;
-    color: white;
+    color: var(--font-color-inverted);
 }
 
 .nav-bar-wrapper > div:nth-child(1) {

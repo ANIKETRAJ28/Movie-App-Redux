@@ -12,6 +12,7 @@
 .movie-details-extra-details  > div {
     font-size: x-large;
     margin-bottom: 2rem;
+    color: var(--font-color-inverted);
 }
 
 .chips {
@@ -20,4 +21,5 @@
     margin-right: 10px;
     border-radius: 20px;
     background-color: var(--dull-blue);
+    color: white;
 }

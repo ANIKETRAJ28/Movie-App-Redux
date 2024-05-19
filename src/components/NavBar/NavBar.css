@@ -1,6 +1,6 @@
 .nav-bar-wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     border: 1px solid var(--dull-blue);
     padding: 1rem;
@@ -53,4 +53,9 @@
 .autocomplete-result {
     padding: 1rem;
     border-bottom: 1px solid black;
+}
+
+.theme-icon {
+    font-size: x-large;
+    cursor: pointer;
 }

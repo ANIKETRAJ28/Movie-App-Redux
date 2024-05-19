@@ -6,16 +6,23 @@
   --font-color: black;
   --font-color-inverted: white;
   --light-prime-gray: #32373e;
+}
 
-  /* --prime-blue: #00a0d6;
+[data-theme='light'] {
+  --prime-blue: #00a0d6;
   --dull-blue: #364f65;
   --dark-blue: #ffffff;
   --card-background: #364f65;
   --font-color: white;
   --font-color-inverted: black;
-  --light-prime-gray: #e6ecf5; */
+  --light-prime-gray: #e6ecf5;
 }
 
 body {
+  margin: 0;
+  padding: 0;
+}
+
+#app-wrapper {
   background-color: var(--dark-blue);
 }

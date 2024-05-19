@@ -3,6 +3,7 @@ import './NavBar.css';
 
 import useMovieList from '../../hooks/useMovieList';
 import useDebounce from '../../hooks/useDebounce';
+import { Link, useNavigate } from 'react-router-dom';
 
 function NavBar() {
 
@@ -10,10 +11,15 @@ function NavBar() {
     const [searchResult, setSearchResult] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
     const {movieList} = useMovieList(searchTerm);
+    const navigator = useNavigate();
+
+    function handleAutoComplete(e, id) {;
+        navigator(`movie/${id}`);
+    }
 
     return (
         <div className="nav-bar-wrapper">
-            <div>Movie Base</div>
+            <div><Link to={`/`}>Movie Base</Link></div>
             <div className="search-bar">
                 <input
                     type="text"
@@ -36,7 +42,7 @@ function NavBar() {
                 <div id='result-list' /*ref={resultListRef}*/ style={{display: `${searchResult ? 'block' : 'none'}`}}>
                     {
                         movieList.length > 0 && movieList.map(movie => (
-                            <div className='autocomplete-result' key={movie.imdbID}>{movie.Title}</div>
+                            <div className='autocomplete-result' onMouseDown={(e) => handleAutoComplete(e, movie.imdbID)} key={movie.imdbID}>{movie.Title}</div>
                         ))
                     }
                 </div>

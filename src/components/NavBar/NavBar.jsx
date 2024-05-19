@@ -22,6 +22,16 @@ function NavBar() {
         navigator(`movie/${id}`);
     }
 
+    function updateTheme() {
+        if(theme == 'dark') {
+          setTheme('light');
+          localStorage.setItem('app-theme', 'light');
+        } else {
+          setTheme('dark');
+          localStorage.setItem('app-theme', 'dark');
+        }
+      }
+
     return (
         
         <div className="nav-bar-wrapper">
@@ -53,7 +63,7 @@ function NavBar() {
                     }
                 </div>
             </div>
-            <div onClick={() => setTheme(theme == 'dark' ? 'light' : 'dark')}>
+            <div onClick={updateTheme}>
                 <FontAwesomeIcon className='theme-icon' icon={theme == 'dark' ? faSun : faMoon}/>
             </div>
         </div>
